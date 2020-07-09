@@ -4,10 +4,15 @@
     collapsed-width="0"
     :style="{ minWidth: '300px', height: '100vh'}"
   >
+    <p id="select-property-header">
+      <span class="nav-text">MapBox Vue App</span>
+    </p>
+    <p id="select-property-title">
+      <span class="nav-text">To navigate,</span>
+      <br/>
+      <span class="nav-text">select property from drop down</span>
+    </p>
     <a-menu theme="dark" mode="inline">
-      <a-menu-item id="select-property-drop-down">
-        <span class="nav-text">Select property from drop down</span>
-      </a-menu-item>
       <a-select
         placeholder="Select the property"
         style="width: 250px"
@@ -40,7 +45,13 @@ export default {
 };
 </script>
 <style scoped>
-  #select-property-drop-down {
+  #select-property-title {
     margin-top: 40px;
+    color: #fff;
+  }
+  #select-property-header {
+    margin-top: 40px;
+    color: #fff;
+    font-size: x-large;
   }
 </style>
