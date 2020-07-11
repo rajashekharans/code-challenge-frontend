@@ -6,7 +6,7 @@ const state = {
 };
 
 const getters = {
-  getAllProperties: () => {
+  getAllProperties: (state) => {
     if (!state.all) return [];
 
     const data = state.all.data.features;
@@ -22,15 +22,15 @@ const getters = {
 
     return items;
   },
-  getSelectedProperty: () => {
+  getSelectedProperty: (state) => {
     if (state.selectedProperty === 0) return [0, 0];
 
-    const currentProperty = getters.getAllProperties()
+    const currentProperty = getters.getAllProperties(state)
       .find((property) => property.id === state.selectedProperty);
 
     return currentProperty.coordinates;
   },
-  getGeoJsonSource: () => state.all,
+  getGeoJsonSource: (state) => (state.all),
 };
 
 const actions = {
