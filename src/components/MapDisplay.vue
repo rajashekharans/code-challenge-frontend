@@ -25,7 +25,6 @@
 
 <script>
 import { mapGetters } from 'vuex';
-import Mapbox from 'mapbox-gl';
 import {
   MglMap,
   MglGeojsonLayer,
@@ -52,7 +51,7 @@ export default {
       container: 'map',
       center: [0, 0],
       coordinates: [0, 0],
-      zoom: 17,
+      zoom: 18,
       geoJsonLayer: {
         type: 'circle',
         paint: {
@@ -62,15 +61,12 @@ export default {
       mapBoxActions: undefined,
     };
   },
-  created() {
-    this.mapbox = Mapbox;
-    this.center = [151.206284, -33.877769];
-    this.coordinates = [151.206284, -33.877769];
-  },
   methods: {
     async onMapLoad(event) {
       // Here we cathing 'load' map event
       this.mapBoxActions = event.component.actions;
+      this.center = [151.206284, -33.877769];
+      this.coordinates = [151.206284, -33.877769];
     },
   },
   watch: {
@@ -78,7 +74,7 @@ export default {
       if (newVal !== undefined && this.mapBoxActions !== undefined) {
         await this.mapBoxActions.flyTo({
           center: newVal,
-          zoom: 17,
+          zoom: 18,
           speed: 1,
         });
         this.coordinates = newVal;

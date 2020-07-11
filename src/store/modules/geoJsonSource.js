@@ -1,13 +1,13 @@
-import geoJsonSource from '@/api/staticGeoJsonSource';
+import getGeoJsonSource from '@/api';
 
 const state = {
-  all: [],
+  all: undefined,
   selectedProperty: 0,
 };
 
 const getters = {
   getAllProperties: () => {
-    if (state.all.length === 0) return [];
+    if (!state.all) return [];
 
     const data = state.all.data.features;
     const items = data.map((item) => {
@@ -35,10 +35,10 @@ const getters = {
 
 const actions = {
   async fetchAll({ commit }) {
-    const response = await geoJsonSource.getGeoJsonSource();
+    const response = await getGeoJsonSource();
     commit('setGeoJsonSources', response);
   },
-  async setProperty({ commit }, { property }) {
+  setProperty({ commit }, { property }) {
     commit('setSelectedProperty', property);
   },
 

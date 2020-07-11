@@ -1,5 +1,5 @@
-# code-challenge-frontend
-
+# MapBox Vue App
+Playaround with it at [here](https://adoring-lewin-3218b7.netlify.app/).
 ## Project setup
 ```
 npm install
