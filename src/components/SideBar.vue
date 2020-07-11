@@ -1,7 +1,7 @@
 <template>
   <a-layout-sider
     breakpoint="lg"
-    collapsed-width="0"
+    collapsed-width="40"
     :style="{ minWidth: '300px', height: '100vh'}"
   >
     <p id="select-property-header">
@@ -12,17 +12,17 @@
       <br/>
       <span class="nav-text">select property from drop down</span>
     </p>
-    <a-menu theme="dark" mode="inline">
-      <a-select
-        placeholder="Select the property"
-        style="width: 250px"
-        @change="(property) => setProperty({ property })"
-      >
-        <a-select-option v-for="property in properties" :key="property.id">
-          {{ property.title }}
-        </a-select-option>
-      </a-select>
-    </a-menu>
+
+    <a-select
+      placeholder="Select the property"
+      style="width: 250px"
+      @change="(property) => setProperty({ property })"
+    >
+      <a-select-option v-for="property in properties" :key="property.id">
+        {{ property.title }}
+      </a-select-option>
+    </a-select>
+
   </a-layout-sider>
 </template>
 
