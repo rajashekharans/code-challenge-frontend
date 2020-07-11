@@ -1,6 +1,14 @@
 # MapBox Vue App
 Playaround with it at [here](https://adoring-lewin-3218b7.netlify.app/).
-## Project setup
+
+### To run app locally
+Copy `.env.example` as `.env`
+```
+cp .env.example .env
+```
+Set `VUE_APP_MAPBOX_TOKEN`, with the your MapBox token.
+
+## Project setup (install all dependencies required for the app)
 ```
 npm install
 ```
@@ -13,11 +21,6 @@ npm run serve
 ### Compiles and minifies for production
 ```
 npm run build
-```
-
-### Lints and fixes files
-```
-npm run lint
 ```
 
 ### Customize configuration
